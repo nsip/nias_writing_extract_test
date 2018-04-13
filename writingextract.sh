@@ -12,6 +12,6 @@ xsltproc writing2.xslt $filename >> rsp_events.csv &
 xsltproc writing3.xslt $filename >> responses.csv &
 wait
 done
-perl writing.pl > confirm_writing_extract.csv
+perl writing.pl 
 perl extract_columns.pl < writing_extract.csv
 diff test_writing_extract.csv confirm_writing_extract.csv

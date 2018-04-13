@@ -11,8 +11,8 @@
   <xsl:apply-templates/>
 </xsl:template>
 
-<xsl:template match="//sif:SchoolInfo | //sif:StudentPersonal | //sif:NAPTest | //sif:NAPTestlet | //sif:NAPTestItem | //sif:NAPTestScoreSummary | //sif:NAPStudentResponseSet "/>
-<xsl:template match="//SchoolInfo | //StudentPersonal | //NAPTest | //NAPTestlet | //NAPTestItem | //NAPTestScoreSummary | //NAPStudentResponseSet "/>
+<xsl:template match="//sif:SchoolInfo | //sif:StudentPersonal | //sif:NAPTest | //sif:NAPTestlet | //sif:NAPTestItem | //sif:NAPTestScoreSummary | //sif:NAPStudentResponseSet | //sif:NAPCodeFrame"/>
+<xsl:template match="//SchoolInfo | //StudentPersonal | //NAPTest | //NAPTestlet | //NAPTestItem | //NAPTestScoreSummary | //NAPStudentResponseSet | //NAPCodeFrame"/>
 
 <xsl:template match="//sif:NAPEventStudentLink[sif:ParticipationCode = 'P' or sif:ParticipationCode = 'S' or sif:ParticipationCode = 'R']"/>
 <xsl:template match="//NAPEventStudentLink[ParticipationCode = 'P' or ParticipationCode = 'S' or ParticipationCode = 'R']"/>

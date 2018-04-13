@@ -11,8 +11,8 @@
   <xsl:apply-templates/>
 </xsl:template>
 
-<xsl:template match="//sif:SchoolInfo | //sif:StudentPersonal | //sif:NAPTest | //sif:NAPTestlet | //sif:NAPTestItem | //sif:NAPTestScoreSummary | //sif:NAPEventStudentLink "/>
-<xsl:template match="//SchoolInfo | //StudentPersonal | //NAPTest | //NAPTestlet | //NAPTestItem | //NAPTestScoreSummary | //NAPEventStudentLink "/>
+<xsl:template match="//sif:SchoolInfo | //sif:StudentPersonal | //sif:NAPTest | //sif:NAPTestlet | //sif:NAPTestItem | //sif:NAPTestScoreSummary | //sif:NAPEventStudentLink | //sif:NAPCodeFrame "/>
+<xsl:template match="//SchoolInfo | //StudentPersonal | //NAPTest | //NAPTestlet | //NAPTestItem | //NAPTestScoreSummary | //NAPEventStudentLink | //NAPCodeFrame "/>
 
 <!-- https://stackoverflow.com/questions/3309746/how-to-convert-newline-into-br-with-xslt -->
 <xsl:template name="insertBreaks">

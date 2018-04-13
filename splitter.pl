@@ -8,13 +8,13 @@ while(<>) {
 }
 print F $_;
 while(<>){
-  s/<\/?SchoolInfos[^>]*>|<\/?StudentPersonals[^>*>]|<\/?NAPTests[^>]*>|<\/?NAPTestlets[^>]*>|<\/?NAPTestItems[^>]*>|<\/?NAPEventStudentLinks[^>]*>|<\/?NAPTestScoreSummarys[^>]*>|<\/?NAPStudentResponseSets[^>]*>//g;
-  if(/<SchoolInfo[ >]|<StudentPersonal[ >]|<NAPTest[ >]|<NAPTestlet[ >]|<NAPTestItem[ >]|<NAPEventStudentLink[ >]|<NAPTestScoreSummary[ >]|<NAPStudentResponseSet[ >]/) {
+  s/<\/?SchoolInfos[^>]*>|<\/?StudentPersonals[^>*>]|<\/?NAPTests[^>]*>|<\/?NAPTestlets[^>]*>|<\/?NAPTestItems[^>]*>|<\/?NAPEventStudentLinks[^>]*>|<\/?NAPTestScoreSummarys[^>]*>|<\/?NAPStudentResponseSets[^>]*>|<\/?NAPCodeFrames[^>]*>//g;
+  if(/<SchoolInfo[ >]|<StudentPersonal[ >]|<NAPTest[ >]|<NAPTestlet[ >]|<NAPTestItem[ >]|<NAPEventStudentLink[ >]|<NAPTestScoreSummary[ >]|<NAPStudentResponseSet[ >]|<NAPCodeFrame[ >]/) {
     $n++;
-    ($m) = /(<\/SchoolInfo>|<\/StudentPersonal>|<\/NAPTest>|<\/NAPTestlet>|<\/NAPTestItem>|<\/NAPEventStudentLink>|<\/NAPTestScoreSummary>|<\/NAPStudentResponseSet>)/;
+    ($m) = /(<\/SchoolInfo>|<\/StudentPersonal>|<\/NAPTest>|<\/NAPTestlet>|<\/NAPTestItem>|<\/NAPEventStudentLink>|<\/NAPTestScoreSummary>|<\/NAPStudentResponseSet>|<\/NAPCodeFrame>)/;
     if($m) {
       print F $m, "\n";
-      s/(<\/SchoolInfo>|<\/StudentPersonal>|<\/NAPTest>|<\/NAPTestlet>|<\/NAPTestItem>|<\/NAPEventStudentLink>|<\/NAPTestScoreSummary>|<\/NAPStudentResponseSet>)//;
+      s/(<\/SchoolInfo>|<\/StudentPersonal>|<\/NAPTest>|<\/NAPTestlet>|<\/NAPTestItem>|<\/NAPEventStudentLink>|<\/NAPTestScoreSummary>|<\/NAPStudentResponseSet>|<\/NAPCodeFrame>)//;
     }
   }
   if ($n == 5000) {
