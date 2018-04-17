@@ -31,7 +31,7 @@ Testing is run as follows:
 * Run `writingextract.sh`. The script does the following:
   * Split sif.xml into chunks with 5000 objects each (102 files for a file with 50,000 students)
   * For each chunk, run four XSLT transforms to extract information about writing tests, student registrations for tests, and test results
- * Run a perl script to filter and join those four extracts into a single sorted CSV file, confirm_writing_extract.csv, containing three fields to check: the Platform Student Identifier for the student, their participation status for the writing test, and their response (if any) to the writing test, coded as HTML (as it is in the source XML).
- * Run a perl script to extract from the writing_extract.csv the same three fields, saved as test_writing_extract.csv
- * diff the two files; they should be identical, in which case diff will return no output
- * The script takes 7 minutes to run on an i7 Quad Core Mac
+  * Run a perl script to filter and join those four extracts into a single sorted CSV file, confirm_writing_extract.csv, containing three fields to check: the Platform Student Identifier for the student, their participation status for the writing test, and their response (if any) to the writing test, coded as HTML (as it is in the source XML).
+   * Run a perl script to extract from the writing_extract.csv the same three fields, saved as test_writing_extract.csv
+   * diff the two files; they should be identical, in which case diff will return no output
+   * The script takes 7 minutes to run on an i7 Quad Core Mac
