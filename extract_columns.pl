@@ -4,10 +4,10 @@ my $csv = Text::CSV->new ( { binary => 1 } )  # should set binary attribute.
 open my $fh, "<:encoding(utf8)", "writing_extract.csv" or die "writing_extract.csv: $!";
  my @hdr = $csv->header ($fh);
 while ( my $row = $csv->getline( $fh ) ) {
-  # Test Year,Test level,Jurisdiction Id,ACARA ID,PSI,Local school student ID,TAA student ID,Participation Code,Item Response,Anonymised Id
+  # Test Year,Test level,Jurisdiction Id,ACARA ID,PSI,Local school student ID,TAA student ID,Participation Code,Item Response,Anonymised Id,Test Id
   # to: PSI,Participation Code,Item Response
   #$row->[8] = '"' . $row->[8] . '"' if $row->[8];
-  push @rows, [$row->[4], $row->[7], $row->[8] ];
+  push @rows, [$row->[4], $row->[7], $row->[10], $row->[8] ];
 }
 $csv->eof or $csv->error_diag();
  close $fh;

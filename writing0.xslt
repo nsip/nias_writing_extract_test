@@ -18,12 +18,12 @@
 <xsl:template match="//NAPTest[not(TestContent/Domain = 'Writing')]"/>
 
 <xsl:template match="//sif:NAPTest[sif:TestContent/sif:Domain = 'Writing']">
-  <xsl:value-of select="@RefId"/><xsl:text>
+  <xsl:value-of select="@RefId"/>,<xsl:value-of select="sif:TestContent/sif:NAPTestLocalId"/><xsl:text>
 </xsl:text>
 </xsl:template>
 
 <xsl:template match="//NAPTest[TestContent/Domain = 'Writing']">
-  <xsl:value-of select="@RefId"/><xsl:text>
+  <xsl:value-of select="@RefId"/>,<xsl:value-of select="TestContent/NAPTestLocalId"/><xsl:text>
 </xsl:text>
 </xsl:template>
 

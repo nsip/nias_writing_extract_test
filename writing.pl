@@ -3,7 +3,8 @@ open F, "<:encoding(UTF-8)", "writing_tests.csv";
 while(<F>) {
   chomp;
   next unless /\S/;
-  $writingtest{$_}++
+  ($id, $localid) = split /,/, $_;
+  $writingtest{$id} = $localid;
 }
 close F;
 @out = ();
@@ -14,7 +15,7 @@ while(<F>) {
   next unless /\S/;
   ($id, $participation, $psi) = split /,/, $_;
   next unless $writingtest{$id};
-  push @out, [$psi, $participation,""];
+  push @out, [$psi, $participation, $writingtest{$id}, ""];
 }
 close F;
 open F, "<rsp_events.csv";
@@ -25,6 +26,7 @@ while(<F>){
   next unless /\S/;
   $out1{$psi} = ();
   $out1{$psi}{"participation"} = $participation;
+  $out1{$psi}{"test_id"} = $writingtest{$id};
 }
 close F;
 open F, "<:encoding(UTF-8)", "responses.csv";
@@ -37,7 +39,7 @@ while(<F>) {
   $out1{$psi}{"response"} = $response;
 }
 foreach $psi (keys %out1) {
-  push @out, [$psi, $out1{$psi}{"participation"}, $out1{$psi}{"response"}];
+  push @out, [$psi, $out1{$psi}{"participation"}, $out1{$psi}{"test_id"}, $out1{$psi}{"response"}];
 }
 @out = sort @out;
 
